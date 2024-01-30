@@ -9,19 +9,14 @@ function handleFileSelect(event) {
   event.stopPropagation();
   event.preventDefault();
 
-  var files = event.dataTransfer.files; // FileList object.
-
-  // files - это список File объектов. Выведем их в консоль.
-  for (var i = 0, f; (f = files[i]); i++) {
-    console.log(f.name);
-  }
+  var files = event.dataTransfer.files;
+  document.getElementById('fileInput').files = files;
 }
 
 function sendFileToServer() {
   var fileInput = document.getElementById('fileInput');
   var file = fileInput.files[0];
 
-  // Отправка файла на сервер (используется Fetch API)
   var formData = new FormData();
   formData.append('file', file);
 
@@ -41,9 +36,8 @@ function sendFileToServer() {
 function handleDragOver(event) {
   event.stopPropagation();
   event.preventDefault();
-  event.dataTransfer.dropEffect = 'copy'; // Explicitly show this is a copy.
+  event.dataTransfer.dropEffect = 'copy';
 }
 
-// Настройка обработчика событий для перетаскивания файлов
 var dropZone = document.getElementById('drop_zone');
 dropZone.addEventListener('dragover', handleDragOver, false);
