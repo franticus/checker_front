@@ -24,15 +24,18 @@ function sendFileToServer(file) {
       var resultList = document.getElementById('resultList');
       resultList.innerHTML = '';
 
-      var results = data.split(',');
+      var results = data
+        .split(',')
+        .map(result => result.trim().replace(/\n/g, ''));
       console.log('results:', results);
+
       if (results.length === 1) {
         var listItem = document.createElement('li');
         listItem.textContent = 'Сканирование завершено, проблем не найдено';
         resultList.appendChild(listItem);
       } else {
         results.forEach(result => {
-          if (result.trim() !== '') {
+          if (result !== '') {
             var listItem = document.createElement('li');
             listItem.textContent = result;
             resultList.appendChild(listItem);
