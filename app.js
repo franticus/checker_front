@@ -1,32 +1,44 @@
 document
   .getElementById('drop_zone')
   .addEventListener('drop', handleFileSelect, false);
-document
-  .getElementById('checkButton')
-  .addEventListener('click', sendFileToServer, false);
 
 function handleFileSelect(event) {
   event.stopPropagation();
   event.preventDefault();
 
   var files = event.dataTransfer.files;
-  document.getElementById('fileInput').files = files;
+
+  sendFileToServer(files[0]);
 }
 
-function sendFileToServer() {
-  var fileInput = document.getElementById('fileInput');
-  var file = fileInput.files[0];
-
+function sendFileToServer(file) {
   var formData = new FormData();
   formData.append('file', file);
 
-  fetch('/upload', {
+  fetch('http://localhost:3000/upload', {
     method: 'POST',
     body: formData,
   })
     .then(response => response.text())
     .then(data => {
-      document.getElementById('result').textContent = data;
+      var resultList = document.getElementById('resultList');
+      resultList.innerHTML = '';
+
+      var results = data.split(',');
+      console.log('results:', results);
+      if (results.length === 1) {
+        var listItem = document.createElement('li');
+        listItem.textContent = 'Сканирование завершено, проблем не найдено';
+        resultList.appendChild(listItem);
+      } else {
+        results.forEach(result => {
+          if (result.trim() !== '') {
+            var listItem = document.createElement('li');
+            listItem.textContent = result;
+            resultList.appendChild(listItem);
+          }
+        });
+      }
     })
     .catch(error => {
       console.error('Ошибка:', error);
