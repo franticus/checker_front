@@ -1,0 +1,12 @@
+#drop_zone {
+	border: 2px dashed #0087F7;
+	border-radius: 5px;
+	padding: 50px;
+	text-align: center;
+}
+
+#result {
+	margin-top: 20px;
+	padding: 10px;
+	border: 1px solid #ccc;
+}
