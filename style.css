@@ -18,9 +18,13 @@ body {
 
 .drop_zone {
 	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	border: 2px dashed #0087F7;
 	border-radius: 10px;
-	padding: 50px;
+	padding: 20px;
+	height: 10vh;
 	margin: 20px;
 	text-align: center;
 }
