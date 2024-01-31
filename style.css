@@ -31,6 +31,7 @@ body {
 
 .drop_zone_window:hover {
 	transform: scale(1.05);
+	box-shadow: 5px 5px 10px 0px rgba(0, 36, 89, 0.10);
 }
 
 #result {
@@ -54,4 +55,5 @@ li {
 li:hover {
 	border-bottom: 1px solid #0087F7;
 	transform: scale(1.05);
+	box-shadow: 5px 5px 10px 0px rgba(0, 36, 89, 0.10);
 }
