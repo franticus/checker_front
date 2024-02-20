@@ -49,7 +49,8 @@ function updateResultList(data) {
     .split(',')
     .map(result => result.trim().replace(/\n/g, ''));
 
-  if (results.length === 1 && results[1] === '') {
+  if (results.length === 1) {
+    appendToList(results[0]);
     appendToList('Сканирование завершено, проблем не найдено');
   } else {
     results.forEach(result => {
