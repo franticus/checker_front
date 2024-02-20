@@ -49,7 +49,7 @@ function updateResultList(data) {
     .split(',')
     .map(result => result.trim().replace(/\n/g, ''));
 
-  if (results.length === 1 && results[0] === '') {
+  if (results.length === 1 && results[1] === '') {
     appendToList('Сканирование завершено, проблем не найдено');
   } else {
     results.forEach(result => {
