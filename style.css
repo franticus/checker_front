@@ -38,6 +38,10 @@ body {
 	margin: 20px;
 }
 
+#resultList li:first-child {
+	font-weight: bold;
+}
+
 ul {
 	list-style: none;
 	font-size: 16px;
