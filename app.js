@@ -49,9 +49,12 @@ function updateResultList(data) {
     .split(',')
     .map(result => result.trim().replace(/\n/g, ''));
 
+  const isFileWrong = results[0] === 'No results found.';
+
   if (results.length === 1) {
     appendToList(results[0]);
-    appendToList('Сканирование завершено, проблем не найдено');
+    isFileWrong && appendToList('Что-то пошло не так');
+    !isFileWrong && appendToList('Сканирование завершено, проблем не найдено');
   } else {
     results.forEach(result => {
       if (result !== '') {

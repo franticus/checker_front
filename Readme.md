@@ -1,3 +1,3 @@
 # Checker front
 
-v2.5.0
+v2.8.0
