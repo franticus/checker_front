@@ -1,3 +1,4 @@
 # Checker front
 
-v2.8.0
+v2.8.2
+deploy

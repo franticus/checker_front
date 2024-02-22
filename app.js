@@ -28,17 +28,20 @@ function handleFileSelect(event) {
 function sendFileToServer(file) {
   const formData = new FormData();
   formData.append('file', file);
+  document.getElementById('loader').style.display = 'block';
 
-  fetch('http://localhost:3000/upload', {
+  fetch('http://checker-zip-frantunn.amvera.io/upload', {
     method: 'POST',
     body: formData,
   })
     .then(response => response.text())
     .then(data => {
+      document.getElementById('loader').style.display = 'none';
       updateResultList(data);
     })
     .catch(error => {
       console.error('Ошибка:', error);
+      document.getElementById('loader').style.display = 'none';
     });
 }
 
