@@ -30,7 +30,7 @@ function sendFileToServer(file) {
   formData.append('file', file);
   document.getElementById('loader').style.display = 'block';
 
-  fetch('http://checker-zip-frantunn.amvera.io/upload', {
+  fetch('https://checker-zip-frantunn.amvera.io/upload', {
     method: 'POST',
     body: formData,
   })
