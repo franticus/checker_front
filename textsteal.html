@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Stealer</title>
+    <link rel="stylesheet" href="css/textsteal.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="tabs">
+      <a href="index.html" class="tab">Checker</a>
+      <a href="textsteal.html" class="tab">TextSteal</a>
+      <a href="info.html" class="tab">Info</a>
+      <div class="theme-switch-wrapper">
+        <label class="theme-switch" for="checkbox">
+          <input type="checkbox" id="checkbox" />
+          <div class="slider round"></div>
+        </label>
+      </div>
+    </div>
+    <div class="fadeIn">
+      <div id="errorMessage" style="color: red; text-align: center"></div>
+      <div class="text-stealer-container">
+        <textarea
+          id="inputText"
+          placeholder="Содержимое тега body ..."
+        ></textarea>
+        <div class="buttons">
+          <button id="stealButton">Steal</button>
+          <button id="applyButton">Apply</button>
+        </div>
+        <textarea id="outputText" placeholder="Текст тега body ..."></textarea>
+      </div>
+    </div>
+    <div id="loader" style="display: none"></div>
+
+    <script src="js/textsteal.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

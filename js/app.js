@@ -3,6 +3,19 @@ const dropZone = document.getElementById('drop_zone');
 const dropZoneWindow = document.querySelector('.drop_zone_window');
 const fileInput = document.getElementById('fileInput');
 const resultList = document.getElementById('resultList');
+const loader = document.getElementById('loader');
+
+const url = 'https://checker-zip-frantunn.amvera.io';
+// const url = 'http://localhost:3000';
+
+fetch(`${url}/stats`)
+  .then(response => response.json())
+  .then(data => {
+    console.log('Статистика:', data);
+  })
+  .catch(error => {
+    console.error('Ошибка при получении статистики:', error);
+  });
 
 // Обработчик перетаскивания файла на dropZone
 function handleDragOver(event) {
@@ -28,20 +41,20 @@ function handleFileSelect(event) {
 function sendFileToServer(file) {
   const formData = new FormData();
   formData.append('file', file);
-  document.getElementById('loader').style.display = 'block';
+  loader.style.display = 'block';
 
-  fetch('https://checker-zip-frantunn.amvera.io/upload', {
+  fetch(`${url}/upload`, {
     method: 'POST',
     body: formData,
   })
     .then(response => response.text())
     .then(data => {
-      document.getElementById('loader').style.display = 'none';
+      loader.style.display = 'none';
       updateResultList(data);
     })
     .catch(error => {
       console.error('Ошибка:', error);
-      document.getElementById('loader').style.display = 'none';
+      loader.style.display = 'none';
     });
 }
 
@@ -54,6 +67,7 @@ function updateResultList(data) {
 
   const isFileWrong = results[0] === 'No results found.';
 
+  console.log('results:', results);
   if (results.length === 1) {
     appendToList(results[0]);
     isFileWrong && appendToList('Что-то пошло не так');

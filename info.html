@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Info</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/info.css" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="tabs">
+      <a href="index.html" class="tab">Checker</a>
+      <a href="textsteal.html" class="tab">TextSteal</a>
+      <a href="info.html" class="tab">Info</a>
+      <div class="theme-switch-wrapper">
+        <label class="theme-switch" for="checkbox">
+          <input type="checkbox" id="checkbox" />
+          <div class="slider round"></div>
+        </label>
+      </div>
+    </div>
+    <div class="fadeIn">
+      <div class="info-section">
+        <h2>Checker Zip - v2.8.2</h2>
+        <p>Проводит первичную проверку вёрстки в zip файлах на ошибки.</p>
+        <p>В текущей версии происходят следующие проверки:</p>
+        <ul class="info-list">
+          <li>Проверка на битые ссылки.</li>
+          <li>Проверка на якорные ссылки.</li>
+          <li>Проверка дублирования meta-тегов.</li>
+          <li>Проверка form (required, checkbox, action, name).</li>
+          <li>Проверка на тег h1.</li>
+          <li>Проверка на одинаковые email и номер телефона.</li>
+          <li>Показывает название проверяемого архива.</li>
+          <li>Проверка на ./ в начале относительного пути.</li>
+          <li>Добавлена папка uploads в которой происходят все проверки.</li>
+          <li>
+            Удаление файла если закинут файл не zip либо повреждённый файл.
+          </li>
+        </ul>
+        <hr />
+        <p>Планируется:</p>
+        <ul class="info-list">
+          <li>Проверка на битые пути картинок.</li>
+          <li>Проверка на корректность тегов (открытие/закрытие/обрывы).</li>
+          <li>
+            Проверка на битые ссылки ведущие на несуществующие html страницы.
+          </li>
+        </ul>
+      </div>
+      <hr />
+      <div class="info-section">
+        <h2>Text Stealer - v1.2.0</h2>
+        <p>Помогает с заменой текста на всей странице за раз.</p>
+        <p>В текущей версии работает так:</p>
+        <ul class="info-list">
+          <li>
+            1. Добавить в первый инпут весь тег body, либо любой другой блок
+            отдельно.
+          </li>
+          <li>2. Кнопка steal создаёт карту текста для данных блоков.</li>
+          <li>
+            3. Отправить в Gpt объект текста и перегенерировать под свои нужды.
+          </li>
+          <li>4. Вставить перегенерированный объект во второй инпут.</li>
+          <li>
+            5. Кнопка apply расставит новый текст в прежние места в блоках.
+          </li>
+          <li>
+            6. Скопировать получившийся код из первого инпута и вставить в свою
+            вёрстку.
+          </li>
+          <li>
+            Сейчас плохо сочетается с разбиением предложений другими тегами.
+          </li>
+          <li>
+            При ошибке попытки перевода целого body можно переводить блоки
+            отдельно.
+          </li>
+          <li>
+            <a
+              target="_blank"
+              href="https://drive.google.com/file/d/1lhlkIcwgCkqcGMG-RX8dtMsAwcby2ti9/view?usp=sharing"
+              >Видео-пример использования</a
+            >
+          </li>
+        </ul>
+        <hr />
+        <p>Планируется:</p>
+        <ul class="info-list">
+          <li>
+            Добавить поддержку мелких тегов делящих слова (br, span, nbsp и др).
+          </li>
+        </ul>
+        <hr />
+      </div>
+    </div>
+    <script src="js/main.js"></script>
+  </body>
+</html>
