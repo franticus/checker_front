@@ -7,6 +7,26 @@
     <link rel="stylesheet" href="css/checker.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <script>
+      (function () {
+        function getCookie(name) {
+          let nameEQ = name + '=';
+          let ca = document.cookie.split(';');
+          for (let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) === 0)
+              return c.substring(nameEQ.length, c.length);
+          }
+          return null;
+        }
+
+        let savedTheme = getCookie('theme');
+        if (savedTheme === 'dark') {
+          document.documentElement.classList.add('dark-mode');
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="drop_zone">
