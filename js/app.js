@@ -8,14 +8,16 @@ const loader = document.getElementById('loader');
 const url = 'https://checker-zip-frantunn.amvera.io';
 // const url = 'http://localhost:3000';
 
-fetch(`${url}/stats`)
-  .then(response => response.json())
-  .then(data => {
-    console.log('Статистика:', data);
-  })
-  .catch(error => {
-    console.error('Ошибка при получении статистики:', error);
-  });
+setTimeout(() => {
+  fetch(`${url}/stats`)
+    .then(response => response.json())
+    .then(data => {
+      console.log('Статистика:', data);
+    })
+    .catch(error => {
+      console.error('Ошибка при получении статистики:', error);
+    });
+}, 3000);
 
 // Обработчик перетаскивания файла на dropZone
 function handleDragOver(event) {
