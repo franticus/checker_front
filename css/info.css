@@ -5,6 +5,8 @@ body {
 }
 
 .info-section {
+	margin: 0 auto;
+	max-width: 700px;
 	margin-top: 20px;
 	line-height: 1.6;
 }
