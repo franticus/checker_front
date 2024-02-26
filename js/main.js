@@ -1,12 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const currentPage = window.location.pathname.split('/').pop();
-  const tabs = document.querySelectorAll('.tab');
-  tabs.forEach(tab => {
-    if (tab.getAttribute('href') === currentPage) {
-      tab.classList.add('active');
-    }
-  });
-
   const themeSwitcher = document.getElementById('checkbox');
 
   // Функция для установки куки
