@@ -1,4 +1,4 @@
 # Checker front
 
 v2.8.2
-deploy
+deploy Unique 1

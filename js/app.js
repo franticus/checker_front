@@ -5,19 +5,23 @@ const fileInput = document.getElementById('fileInput');
 const resultList = document.getElementById('resultList');
 const loader = document.getElementById('loader');
 
-const url = 'https://checker-zip-frantunn.amvera.io';
-// const url = 'http://localhost:3000';
+// const url = 'https://checker-zip-frantunn.amvera.io';
+const url = 'http://localhost:3000';
 
 setTimeout(() => {
   fetch(`${url}/stats`)
     .then(response => response.json())
     .then(data => {
-      console.log('Статистика:', data);
+      console.log('visits:', data.visits);
+      console.log('archivesChecked:', data.archivesChecked);
+      console.log('archivesDatabase:', data.archivesDatabase);
+      console.log('textsApplied:', data.textsApplied);
+      console.log('textsStolen:', data.textsStolen);
     })
     .catch(error => {
       console.error('Ошибка при получении статистики:', error);
     });
-}, 3000);
+}, 1000);
 
 // Обработчик перетаскивания файла на dropZone
 function handleDragOver(event) {
@@ -68,12 +72,15 @@ function updateResultList(data) {
     .map(result => result.trim().replace(/\n/g, ''));
 
   const isFileWrong = results[0] === 'No results found.';
+  const isFileCorrect = results[0].includes('Проверка архива');
 
   console.log('results:', results);
   if (results.length === 1) {
     appendToList(results[0]);
     isFileWrong && appendToList('Что-то пошло не так');
-    !isFileWrong && appendToList('Сканирование завершено, проблем не найдено');
+    !isFileWrong &&
+      isFileCorrect &&
+      appendToList('Сканирование завершено, проблем не найдено');
   } else {
     results.forEach(result => {
       if (result !== '') {
