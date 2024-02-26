@@ -31,6 +31,7 @@ function handleFileSelect(event) {
 async function sendFileToServer(file) {
   const formData = new FormData();
   formData.append('siteZip', file);
+  loader.style.display = 'block';
 
   try {
     const response = await fetch(`${url}/uniquetest`, {
@@ -43,8 +44,10 @@ async function sendFileToServer(file) {
     const data = await response.json();
     console.log('data:', data);
     updateResultList(data);
+    loader.style.display = 'none';
   } catch (error) {
     console.error('Ошибка:', error);
+    loader.style.display = 'none';
   }
 }
 
