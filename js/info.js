@@ -12,7 +12,7 @@ resetUploadsButton.addEventListener('click', async function () {
       },
     });
 
-    console.log('response:', response);
+    console.log('response:', response.body);
 
     if (response.ok) {
       const data = await response.text();
