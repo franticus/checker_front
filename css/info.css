@@ -39,8 +39,7 @@ body {
 	transition: all 0.3s ease-in-out;
 }
 
-#resetUploadsButton:hover,
-#resetUploadsButton:focus {
+#resetUploadsButton:hover {
 	background: #0087F7;
 	color: #fff;
 	transform: translateY(-2px);
