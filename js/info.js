@@ -4,7 +4,7 @@ const url = 'https://checker-zip-frantunn.amvera.io';
 // const url = 'http://localhost:3000';
 
 resetUploadsButton.addEventListener('click', function () {
-  fetch('/cleanuploads', {
+  fetch(`${url}/cleanuploads`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
