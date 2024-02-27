@@ -11,13 +11,13 @@ resetUploadsButton.addEventListener('click', function () {
     },
   })
     .then(response => {
+      console.log('response:', response);
       if (response.ok) {
         return response.text();
       }
     })
     .then(data => {
       console.log(data);
-      console.log('Uploads directory has been cleared successfully.');
     })
     .catch(error => {
       console.error('Error:', error);
