@@ -14,7 +14,6 @@ resetUploadsButton.addEventListener('click', function () {
       if (response.ok) {
         return response.text();
       }
-      throw new Error('Something went wrong on server');
     })
     .then(data => {
       console.log(data);
@@ -22,6 +21,5 @@ resetUploadsButton.addEventListener('click', function () {
     })
     .catch(error => {
       console.error('Error:', error);
-      console.log('Error clearing uploads directory');
     });
 });
