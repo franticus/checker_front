@@ -1,7 +1,7 @@
 const resetUploadsButton = document.getElementById('resetUploadsButton');
 
-// const url = 'https://checker-zip-frantunn.amvera.io';
-const url = 'http://localhost:3000';
+const url = 'https://checker-zip-frantunn.amvera.io';
+// const url = 'http://localhost:3000';
 
 resetUploadsButton.addEventListener('click', async function () {
   try {

@@ -6,8 +6,8 @@ const resultList = document.getElementById('resultList');
 const checkButton = document.getElementById('checkButton');
 const urlInput = document.getElementById('urlInput');
 
-// const url = 'https://checker-zip-frantunn.amvera.io';
-const url = 'http://localhost:3000';
+const url = 'https://checker-zip-frantunn.amvera.io';
+// const url = 'http://localhost:3000';
 
 // Обработчик перетаскивания файла на dropZone
 function handleDragOver(event) {
