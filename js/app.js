@@ -5,8 +5,8 @@ const fileInput = document.getElementById('fileInput');
 const resultList = document.getElementById('resultList');
 const loader = document.getElementById('loader');
 
-const url = 'https://checker-zip-frantunn.amvera.io';
-// const url = 'http://localhost:3000';
+// const url = 'https://checker-zip-frantunn.amvera.io';
+const url = 'http://localhost:3000';
 
 setTimeout(() => {
   fetch(`${url}/stats`)

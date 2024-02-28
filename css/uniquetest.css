@@ -49,3 +49,33 @@ li:hover {
 	transform: scale(1.05);
 	box-shadow: 5px 5px 10px 0px rgba(0, 36, 89, 0.10);
 }
+
+.url_input_window {
+	display: flex;
+	justify-content: space-between;
+	border-radius: 10px;
+	margin: 20px;
+	align-items: center;
+}
+
+#urlInput {
+	width: 90%;
+	padding: 10px;
+	border: 1px solid #d2eafd;
+	border-radius: 5px;
+	margin-right: 10px;
+}
+
+#checkButton {
+	padding: 10px 20px;
+	background-color: #f70000;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease-in-out;
+}
+
+#checkButton:hover {
+	background-color: #ff7676;
+}
