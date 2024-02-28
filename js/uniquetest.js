@@ -93,44 +93,44 @@ dropZoneWindow.addEventListener('click', () => {
 
 fileInput.addEventListener('change', handleFileSelect);
 
-checkButton.addEventListener('click', async () => {
-  const targetUrl = urlInput.value;
-  console.log('Проверка URL: ', targetUrl);
+// checkButton.addEventListener('click', async () => {
+//   const targetUrl = urlInput.value;
+//   console.log('Проверка URL: ', targetUrl);
 
-  if (!targetUrl) {
-    // Используйте targetUrl вместо url для проверки введенного адреса
-    alert('Пожалуйста, введите URL сайта для проверки.');
-    return;
-  }
+//   if (!targetUrl) {
+//     // Используйте targetUrl вместо url для проверки введенного адреса
+//     alert('Пожалуйста, введите URL сайта для проверки.');
+//     return;
+//   }
 
-  loader.style.display = 'block';
+//   loader.style.display = 'block';
 
-  try {
-    const response = await fetch(`${url}/uniquetest_url`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ siteUrl: targetUrl }),
-    });
+//   try {
+//     const response = await fetch(`${url}/uniquetest_url`, {
+//       method: 'POST',
+//       headers: {
+//         'Content-Type': 'application/json',
+//       },
+//       body: JSON.stringify({ siteUrl: targetUrl }),
+//     });
 
-    console.log('response:', response);
-    if (!response.ok) {
-      loader.style.display = 'none';
-      throw new Error('Ошибка сети или сервера');
-    }
+//     console.log('response:', response);
+//     if (!response.ok) {
+//       loader.style.display = 'none';
+//       throw new Error('Ошибка сети или сервера');
+//     }
 
-    const data = await response.json();
-    console.log('Результат проверки:', data);
+//     const data = await response.json();
+//     console.log('Результат проверки:', data);
 
-    // Используйте updateResultList(data) для обновления списка результатов
-    updateResultList(data);
+//     // Используйте updateResultList(data) для обновления списка результатов
+//     updateResultList(data);
 
-    loader.style.display = 'none';
-  } catch (error) {
-    console.error('Ошибка при запросе:', error);
-    document.getElementById('result').textContent =
-      'Ошибка при запросе: ' + error.message;
-    loader.style.display = 'none';
-  }
-});
+//     loader.style.display = 'none';
+//   } catch (error) {
+//     console.error('Ошибка при запросе:', error);
+//     document.getElementById('result').textContent =
+//       'Ошибка при запросе: ' + error.message;
+//     loader.style.display = 'none';
+//   }
+// });
