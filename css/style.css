@@ -161,6 +161,19 @@ input:checked+.slider:before {
 	border-bottom: 1px solid #444;
 }
 
+.dark-mode #urlInput {
+	color: #ffffff;
+	outline: none;
+	background-color: #333;
+	border: 2px solid #333;
+}
+
+.dark-mode #urlInput:focus {
+	color: #ffffff;
+	background-color: #333;
+	outline: 1px solid #0087F7;
+}
+
 .dark-mode .tab {
 	color: #ffffff;
 	background-color: #333;
