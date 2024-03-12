@@ -43,7 +43,17 @@
     </div>
     <div class="fadeIn">
       <div class="info-section">
-        <h2>Checker Zip - v2.8.2</h2>
+        <p>По вопросам обращаться сюда:</p>
+        <ul class="info-list">
+          <li>
+            Telegram:
+            <a href="https://t.me/FrantUnn" target="_blank">@FrantUnn</a>
+          </li>
+        </ul>
+        <hr />
+      </div>
+      <div class="info-section">
+        <h2>Checker Zip - v3.0.0</h2>
         <p>Проводит первичную проверку вёрстки в zip файлах на ошибки.</p>
         <p>В текущей версии происходят следующие проверки:</p>
         <ul class="info-list">
@@ -52,10 +62,18 @@
           <li>Проверка дублирования meta-тегов.</li>
           <li>Проверка form (required, checkbox, action, name).</li>
           <li>Проверка на тег h1.</li>
+          <li>Проверка на битые пути картинок.</li>
+          <li>Проверка тегов img на наличие alt.</li>
+          <li>Проверка на папку в папке (правильность архивирования)).</li>
           <li>Проверка на одинаковые email и номер телефона.</li>
           <li>Показывает название проверяемого архива.</li>
           <li>Проверка на ./ в начале относительного пути.</li>
           <li>Добавлена папка uploads в которой происходят все проверки.</li>
+          <li>Добавлена кнопка чистящая папку uploads и temp.</li>
+          <li>
+            Добавлена кнопка чистящая папку базы checkedArchives от файлов
+            начинающихся не с (New_).
+          </li>
           <li>
             Удаление файла если закинут файл не zip либо повреждённый файл.
           </li>
@@ -158,7 +176,10 @@
         </ul>
       </div>
 
-      <button id="resetUploadsButton">Reset uploads folder</button>
+      <div class="buttons">
+        <button id="resetUploadsButton">Reset uploads folder</button>
+        <button id="cleanNonNewFilesBtn">Clean Non-"New" Files</button>
+      </div>
     </div>
     <script src="js/main.js"></script>
     <script src="js/info.js"></script>

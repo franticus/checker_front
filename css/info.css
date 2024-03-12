@@ -23,7 +23,11 @@ body {
 	margin-bottom: 5px;
 }
 
-#resetUploadsButton {
+.buttons {
+	margin-top: 80px;
+}
+
+.buttons button {
 	display: block;
 	cursor: pointer;
 	outline: none;
@@ -34,12 +38,11 @@ body {
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 	padding: 10px 20px;
 	margin: 0 auto;
-	margin-top: 80px;
 	border-radius: 5px;
 	transition: all 0.3s ease-in-out;
 }
 
-#resetUploadsButton:hover {
+.buttons button:hover {
 	background: #0087F7;
 	color: #fff;
 	transform: translateY(-2px);

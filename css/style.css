@@ -19,6 +19,12 @@ body {
 	font-family: Arial, Helvetica, sans-serif;
 }
 
+.server_warning {
+	margin: 20px auto 0 auto;
+	color: coral;
+	font-size: 12px;
+}
+
 .title {
 	padding: 0 20px;
 	text-align: center;

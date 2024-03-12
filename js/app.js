@@ -68,19 +68,15 @@ function sendFileToServer(file) {
 function updateResultList(data) {
   resultList.innerHTML = '';
   const results = data
-    .split(',')
+    .split('|||')
     .map(result => result.trim().replace(/\n/g, ''));
 
   const isFileWrong = results[0] === 'No results found.';
-  const isFileCorrect = results[0].includes('Проверка архива');
 
   console.log('results:', results);
   if (results.length === 1) {
     appendToList(results[0]);
     isFileWrong && appendToList('Что-то пошло не так');
-    !isFileWrong &&
-      isFileCorrect &&
-      appendToList('Сканирование завершено, проблем не найдено');
   } else {
     results.forEach(result => {
       if (result !== '') {
