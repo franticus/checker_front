@@ -22,7 +22,7 @@ body {
 	margin: 20px auto 0 auto;
 	color: coral;
 	font-size: 12px;
-	display: none;
+	display: block;
 }
 
 .title {
