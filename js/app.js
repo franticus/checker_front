@@ -12,7 +12,6 @@ setTimeout(() => {
   fetch(`${url}/stats`)
     .then(response => response.json())
     .then(data => {
-      console.log('archivesChecked:', data.archivesChecked);
       console.log('archivesDatabase:', data.archivesDatabase);
       console.log('transferedFiles:', data.transferedFiles);
       console.log('textsApplied:', data.textsApplied);
