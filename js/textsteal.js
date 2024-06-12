@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const loader = document.getElementById('loader');
   const errorMessage = document.getElementById('errorMessage');
 
-  const url = 'https://checker-zip-frantunn.amvera.io';
+  const url = 'https://checkerzip-myfirst27.amvera.io';
   // const url = 'http://localhost:3000';
 
   stealButton.addEventListener('click', function () {
