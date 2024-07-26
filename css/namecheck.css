@@ -1,0 +1,64 @@
+.nameCheck_container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0 auto;
+	padding: 20px;
+	gap: 10px;
+}
+
+.companyName {
+	width: 100%;
+	max-width: 500px;
+	height: 40px;
+	border: 2px solid #0087F7;
+	background-color: #fff;
+	border-radius: 5px;
+	padding: 5px 10px;
+}
+
+.nameCheckButton {
+	padding: 10px 20px;
+	border: 2px solid #0087F7;
+	border-radius: 5px;
+	cursor: pointer;
+	background-color: #0087F7;
+	color: #fff;
+	transition: all 0.3s ease-in-out;
+}
+
+.nameCheckButton:hover {
+	background-color: #0472cb;
+}
+
+ul {
+	list-style: none;
+	font-size: 16px;
+	width: 100%;
+	max-width: 600px;
+	margin: 0 auto;
+}
+
+li {
+	cursor: pointer;
+	border: 1px solid #d2eafd;
+	border-bottom: 1px solid #ff7676;
+	padding: 10px;
+	margin-bottom: 10px;
+	border-radius: 10px;
+}
+
+li:hover {
+	border-bottom: 1px solid #0087F7;
+	transform: scale(1.05);
+	box-shadow: 5px 5px 10px 0px rgba(0, 36, 89, 0.10);
+}
+
+#errorMessage {
+	width: 100%;
+	text-align: center;
+	color: coral;
+	font-size: 12px;
+	font-weight: 600;
+	margin: 0 auto;
+}

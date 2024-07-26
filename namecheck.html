@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Unique Test ZIP</title>
+    <title>Checker ZIP</title>
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/uniquetest.css" />
+    <link rel="stylesheet" href="css/namecheck.css" />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <script>
       (function () {
@@ -35,8 +35,8 @@
     <div>
       <div class="tabs">
         <a href="index.html" class="tab">Checker</a>
-        <a href="uniquetest.html" class="tab active">UniqueTest</a>
-        <a href="namecheck.html" class="tab">NameCheck</a>
+        <a href="uniquetest.html" class="tab">UniqueTest</a>
+        <a href="namecheck.html" class="tab active">NameCheck</a>
         <a href="textsteal.html" class="tab">TextSteal</a>
         <a href="info.html" class="tab">Info</a>
         <div class="theme-switch-wrapper">
@@ -47,12 +47,18 @@
         </div>
       </div>
       <div class="title">
-        Анализирует ZIP-архивы на уникальность содержимого Html страниц.
+        Проверка уникальности названия компании (<strong>PascaleCase</strong>)
       </div>
-      <div class="drop_zone_window fadeIn">
-        Нажмите для выбора файла, либо перетащите сюда ZIP-файл
+      <div class="nameCheck_container fadeIn">
+        <input
+          class="companyName"
+          type="text"
+          id="companyName"
+          placeholder="НазваниеKомпании"
+        />
+        <button id="nameCheckButton" class="nameCheckButton">Проверить</button>
       </div>
-      <input type="file" id="fileInput" style="display: none" />
+      <div id="errorMessage"></div>
       <div id="loader" style="display: none">
         <div class="dank-ass-loader">
           <div class="row">
@@ -93,7 +99,7 @@
         <ul id="resultList"></ul>
       </div>
 
-      <script type="module" src="js/uniquetest.js"></script>
+      <script type="module" src="js/namecheck.js"></script>
       <script type="module" src="js/main.js"></script>
     </div>
   </body>

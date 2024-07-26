@@ -339,3 +339,8 @@ input:checked+.slider:before {
 	border-bottom: calc(var(--size) * 1.8) solid var(--color);
 	filter: drop-shadow(0 0 calc(var(--size) * 1.5) var(--color));
 }
+
+.dark-mode .companyName {
+	background-color: #333;
+	color: #fff;
+}
