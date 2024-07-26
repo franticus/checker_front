@@ -1,15 +1,14 @@
+import { apiUrl } from './key.js';
+
 const resetUploadsButton = document.getElementById('resetUploadsButton');
 const cleanNonNewFilesButton = document.getElementById('cleanNonNewFilesBtn');
 const transferOldToDataBaseBtn = document.getElementById(
   'transferOldToDataBaseBtn'
 );
 
-const url = 'https://checkerzip-myfirst27.amvera.io';
-// const url = 'http://localhost:3000';
-
 resetUploadsButton.addEventListener('click', async function () {
   try {
-    const response = await fetch(`${url}/cleanuploads`, {
+    const response = await fetch(`${apiUrl}/cleanuploads`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -35,7 +34,7 @@ resetUploadsButton.addEventListener('click', async function () {
 
 cleanNonNewFilesButton.addEventListener('click', async function () {
   try {
-    const response = await fetch(`${url}/cleanNonNewFiles`, {
+    const response = await fetch(`${apiUrl}/cleanNonNewFiles`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -61,7 +60,7 @@ cleanNonNewFilesButton.addEventListener('click', async function () {
 
 transferOldToDataBaseBtn.addEventListener('click', async function () {
   try {
-    const response = await fetch(`${url}/transferOldFiles`, {
+    const response = await fetch(`${apiUrl}/transferOldFiles`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

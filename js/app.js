@@ -1,15 +1,13 @@
-// Получаем элементы
+import { apiUrl } from './key.js';
+
 const dropZone = document.getElementById('drop_zone');
 const dropZoneWindow = document.querySelector('.drop_zone_window');
 const fileInput = document.getElementById('fileInput');
 const resultList = document.getElementById('resultList');
 const loader = document.getElementById('loader');
 
-const url = 'https://checkerzip-myfirst27.amvera.io';
-// const url = 'http://localhost:3000';
-
 setTimeout(() => {
-  fetch(`${url}/stats`)
+  fetch(`${apiUrl}/stats`)
     .then(response => response.json())
     .then(data => {
       console.log('archivesDatabase:', data.archivesDatabase);
@@ -22,14 +20,12 @@ setTimeout(() => {
     });
 }, 1000);
 
-// Обработчик перетаскивания файла на dropZone
 function handleDragOver(event) {
   event.stopPropagation();
   event.preventDefault();
   event.dataTransfer.dropEffect = 'copy';
 }
 
-// Обработчик выбора файла
 function handleFileSelect(event) {
   event.stopPropagation();
   event.preventDefault();
@@ -42,13 +38,12 @@ function handleFileSelect(event) {
   }
 }
 
-// Отправка файла на сервер
 function sendFileToServer(file) {
   const formData = new FormData();
   formData.append('file', file);
   loader.style.display = 'block';
 
-  fetch(`${url}/upload`, {
+  fetch(`${apiUrl}/upload`, {
     method: 'POST',
     body: formData,
   })
@@ -63,7 +58,6 @@ function sendFileToServer(file) {
     });
 }
 
-// Обновление списка результатов
 function updateResultList(data) {
   resultList.innerHTML = '';
   const results = data
@@ -85,14 +79,12 @@ function updateResultList(data) {
   }
 }
 
-// Добавление элемента в список
 function appendToList(text) {
   const listItem = document.createElement('li');
   listItem.textContent = text;
   resultList.appendChild(listItem);
 }
 
-// Назначение обработчиков событий
 dropZone.addEventListener('dragover', handleDragOver, false);
 dropZone.addEventListener('drop', handleFileSelect, false);
 dropZoneWindow.addEventListener('click', () => {

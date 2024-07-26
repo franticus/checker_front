@@ -1,22 +1,16 @@
-// Получаем элементы
+import { apiUrl } from './key.js';
+
 const dropZone = document.getElementById('drop_zone');
 const dropZoneWindow = document.querySelector('.drop_zone_window');
 const fileInput = document.getElementById('fileInput');
 const resultList = document.getElementById('resultList');
-const checkButton = document.getElementById('checkButton');
-const urlInput = document.getElementById('urlInput');
 
-const url = 'https://checkerzip-myfirst27.amvera.io';
-// const url = 'http://localhost:3000';
-
-// Обработчик перетаскивания файла на dropZone
 function handleDragOver(event) {
   event.stopPropagation();
   event.preventDefault();
   event.dataTransfer.dropEffect = 'copy';
 }
 
-// Обработчик выбора файла
 function handleFileSelect(event) {
   event.stopPropagation();
   event.preventDefault();
@@ -29,14 +23,13 @@ function handleFileSelect(event) {
   }
 }
 
-// Отправка файла на сервер
 async function sendFileToServer(file) {
   const formData = new FormData();
   formData.append('siteZip', file);
   loader.style.display = 'block';
 
   try {
-    const response = await fetch(`${url}/uniquetest`, {
+    const response = await fetch(`${apiUrl}/uniquetest`, {
       method: 'POST',
       body: formData,
     });
@@ -53,11 +46,9 @@ async function sendFileToServer(file) {
   }
 }
 
-// Обновление списка результатов на странице
 function updateResultList(data) {
-  resultList.innerHTML = ''; // Очищаем текущий список
+  resultList.innerHTML = '';
 
-  // Перебор данных для создания элементов списка с показателями в span
   data.forEach((item, index) => {
     const listItem = document.createElement('li');
 
@@ -79,12 +70,10 @@ function updateResultList(data) {
       listItem.appendChild(nameSpan);
     }
 
-    // Добавляем элемент списка в resultList
     resultList.appendChild(listItem);
   });
 }
 
-// Назначение обработчиков событий
 dropZone.addEventListener('dragover', handleDragOver, false);
 dropZone.addEventListener('drop', handleFileSelect, false);
 dropZoneWindow.addEventListener('click', () => {

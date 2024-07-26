@@ -1,3 +1,5 @@
+import { apiUrl } from './key.js';
+
 document.addEventListener('DOMContentLoaded', function () {
   const stealButton = document.getElementById('stealButton');
   const applyButton = document.getElementById('applyButton');
@@ -6,14 +8,11 @@ document.addEventListener('DOMContentLoaded', function () {
   const loader = document.getElementById('loader');
   const errorMessage = document.getElementById('errorMessage');
 
-  const url = 'https://checkerzip-myfirst27.amvera.io';
-  // const url = 'http://localhost:3000';
-
   stealButton.addEventListener('click', function () {
     errorMessage.textContent = '';
     loader.style.display = 'block';
 
-    fetch(`${url}/steal`, {
+    fetch(`${apiUrl}/steal`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -43,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     try {
       const replacements = JSON.parse(outputText.value);
-      fetch(`${url}/apply`, {
+      fetch(`${apiUrl}/apply`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

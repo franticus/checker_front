@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
   const themeSwitcher = document.getElementById('checkbox');
 
-  // Функция для установки куки
   function setCookie(name, value, days) {
     let expires = '';
     if (days) {
@@ -12,7 +11,6 @@ document.addEventListener('DOMContentLoaded', function () {
     document.cookie = name + '=' + (value || '') + expires + '; path=/';
   }
 
-  // Функция для получения куки
   function getCookie(name) {
     let nameEQ = name + '=';
     let ca = document.cookie.split(';');
@@ -24,19 +22,17 @@ document.addEventListener('DOMContentLoaded', function () {
     return null;
   }
 
-  // Проверяем, сохранена ли тема в куки, и применяем её
   let savedTheme = getCookie('theme');
   if (savedTheme === 'dark') {
     document.documentElement.classList.add('dark-mode');
     themeSwitcher.checked = true;
   }
 
-  // Слушатель события для переключателя
   themeSwitcher.addEventListener('change', () => {
     document.documentElement.classList.toggle('dark-mode');
     let theme = document.documentElement.classList.contains('dark-mode')
       ? 'dark'
       : 'light';
-    setCookie('theme', theme, 7); // Сохраняем выбранную тему на 7 дней
+    setCookie('theme', theme, 100);
   });
 });
