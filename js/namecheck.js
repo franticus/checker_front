@@ -34,7 +34,7 @@ document
         const resultList = document.getElementById('resultList');
         resultList.innerHTML = `<li>${result.message}</li>`;
         if (result.similar && result.similar.length > 0) {
-          resultList.innerHTML += `<li>Максимально похожие названия:</li>`;
+          resultList.innerHTML += `<li>Ближайшие схожие названия:</li>`;
           result.similar.forEach(name => {
             resultList.innerHTML += `<li>${name}</li>`;
           });
