@@ -32,7 +32,7 @@ document
       .then(result => {
         document.getElementById('loader').style.display = 'none';
         const resultList = document.getElementById('resultList');
-        resultList.innerHTML = `<li>${result.message}</li>`;
+        resultList.innerHTML = `<li><strong>${result.message}</strong></li>`;
         if (result.similar && result.similar.length > 0) {
           resultList.innerHTML += `<li>Ближайшие схожие названия:</li>`;
           result.similar.forEach(name => {
